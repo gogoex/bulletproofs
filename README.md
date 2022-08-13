@@ -88,6 +88,7 @@ $ c = \langle \mathbf{a,b} \rangle $
 
 #### Prover and verifier know:
 $ \mathbf{g, h} $
+
 $ P, c $
 
 #### Only prover knows:
@@ -128,7 +129,9 @@ $ H(\mathbf{a}_1, \mathbf{a'}_1, \mathbf{b}_1, \mathbf{b'}_1, c_1) \cdot H(\math
 ### Proof method
 
 1. $n = length(a)$ 
+
 1. $n' = n / 2$
+
 1. Prover computes $ L, R \in\mathbb{G} $ and sends to verifier
 
     $ L = H(\mathbf{0}^{n'}, \mathbf{a}_{[:n']}, \mathbf{b} _ {[n':]}, \mathbf{0}^{n'}, \langle \mathbf{a} _{[:n']}, \mathbf{b} _{[n':]} \rangle) $
@@ -139,11 +142,13 @@ $ H(\mathbf{a}_1, \mathbf{a'}_1, \mathbf{b}_1, \mathbf{b'}_1, c_1) \cdot H(\math
     $ P = H( \mathbf{a} _{[:n']}, \mathbf{a} _{[n':]}, \mathbf{b} _{[:n']}, \mathbf{b} _{[n':]}, \langle \mathbf{a}, \mathbf{b} \rangle ) $
 
 1. Verifier selects $ x \in \mathbb{Z}_p $ and sends to prover
+
 1. Prover computes $ \mathbf{a}', \mathbf{b}' $ and sends to verifier
 
     $ \mathbf{a}' = x \mathbf{a} _{[:n']} +  x^{-1} \mathbf{a} _{[n':]} \in \mathbb{Z}_p^{n'} $
 
     $ \mathbf{b}' = x^{-1} \mathbf{b} _{[:n']} +  x \mathbf{b} _{[n':]} \in \mathbb{Z}_p^{n'} $
+
 1. Verifier computes $ P' = L^{(x^2)} \cdot P \cdot R^{(x^{-2})} $ using $ (L, R, \mathbf{a}', \mathbf{b}') $ and accepts prover's argument if below equation holds:
 
     $ P' = H(x^{-1}  \mathbf{a}', x \mathbf{a}', x \mathbf{b}', x^{-1}  \mathbf{b}', \langle \mathbf{a}', \mathbf{b}' \rangle) $
@@ -162,6 +167,7 @@ is seemingly not easy to understand. But using concrete numbers, it becomes easi
 $n = 4, n' = 2$,
 
 $ \mathbf{a} = [a_1, a_2, a_3, a_4] $
+
 $ \mathbf{b} = [b_1, b_2, b_3, b_4] $
 
 result in
