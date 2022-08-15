@@ -325,14 +325,23 @@ Using OR proofs, a range proof that proves a value to be between 0 and 7 can be 
 
 1. Create Pedersen commitment $C$ for value $c$
 1. Create $C1, C2, C3$ such that $Cn$ is a commitment for $c$'s $n$-th bit and $C1 + C2 + C3 = C$
+
 1. Create $Cn'$ as follows:
+
     $ C1' = C1 - 1H $
+
     $ C2' = C2 - 2H $
+
     $ C3' = C3 - 4H $
+
 1. Create below 3 ring signatures
+
     $ \lbrace C1, C1' \rbrace $
+
     $ \lbrace C2, C2' \rbrace $
+    
     $ \lbrace C3, C3' \rbrace $
+
 1. If all ring signatures are valid, the value is inside the range. If not, the value is outside the range.
 
 ## Inner-Product Range Proof
