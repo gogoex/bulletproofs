@@ -567,7 +567,7 @@ $ = t(x) = t_0 + t_1 \cdot x + t_2 \cdot x^2 $
 
 $ = \upsilon \cdot z^2 + \delta (y, z) + t_1 \cdot x + t_2 \cdot x^2 $
 
-$ t_x = \gamma \cdot z^2 + t_1 \cdot x + t_2 \cdot x^2 $
+$ t_x = \gamma \cdot z^2 + \tau_1 \cdot x + \tau_2 \cdot x^2 $
 
 $ g^{\hat{t}} \cdot h^{t_x} $
 
