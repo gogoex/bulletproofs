@@ -16,68 +16,68 @@ An efficient method of constructing range proof
 ### Vector polynomial
 $n$ is the degree of a polynomial
 
-$ p(x) = \displaystyle \sum_{i=0}^d \mathbf{p_i} \cdot x^{i} \in \mathbb{Z}_p^n $
+$$ p(x) = \displaystyle \sum_{i=0}^d \mathbf{p_i} \cdot x^{i} \in \mathbb{Z}_p^n $$
 
 For example,
 
-$ n = 2 $
+$$ n = 2 $$
 
-$ d = n-1 = 1 $
+$$ d = n-1 = 1 $$
 
-$ \mathbf{p_0} = [2, 3] \in \mathbb{Z}_p^2 $
+$$ \mathbf{p_0} = [2, 3] \in \mathbb{Z}_p^2 $$
 
-$ \mathbf{p_1} = [3, 4] \in \mathbb{Z}_p^2 $
+$ \mathbf{p_1} = [3, 4] \in \mathbb{Z}_p^2 $$$
 
-$ p(x) = \mathbf{p_0} \cdot x^0 + \mathbf{p_1} \cdot x^1 $
+$$ p(x) = \mathbf{p_0} \cdot x^0 + \mathbf{p_1} \cdot x^1 $$
 
-$ p(x) = [2, 3] + [3, 4] \cdot x $
+$$ p(x) = [2, 3] + [3, 4] \cdot x $$
 
 Evaluating at $x=5$,
 
-$ p(5) = [2, 3] + [3, 4] \cdot 5 $
+$$ p(5) = [2, 3] + [3, 4] \cdot 5 $$
 
-$ p(5) = [2, 3] + [15, 20] $
+$$ p(5) = [2, 3] + [15, 20] $$
 
-$ p(5) = [17, 23] \in \mathbb{Z}_p^2 $
+$$ p(5) = [17, 23] \in \mathbb{Z}_p^2 $$
 
 ### Inner product of vector polynomial
 Assuming $l(x), r(x)$ to be vector polynomials,
 
-$ \langle l(x), r(x) \rangle = \displaystyle \sum_{i=0}^d \displaystyle \sum_{j=0}^i \langle \mathbf{l_i}, \mathbf{r_i} \rangle \cdot x^{i+j} \in \mathbb{Z}_p^n $
+$$ \langle l(x), r(x) \rangle = \displaystyle \sum_{i=0}^d \displaystyle \sum_{j=0}^i \langle \mathbf{l_i}, \mathbf{r_i} \rangle \cdot x^{i+j} \in \mathbb{Z}_p^n $$
 
 For example,
 
-$ n = 2 $
+$$ n = 2 $$
 
-$ d = n-1 = 1 $
+$$ d = n-1 = 1 $$
 
-$ l(x) = [2, 3] + [3, 4] \cdot x $
+$$ l(x) = [2, 3] + [3, 4] \cdot x $$
 
-$ r(x) = [3, 5] + [1, 2] \cdot x $
+$$ r(x) = [3, 5] + [1, 2] \cdot x $$
 
-$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x^{1+0} + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{1+1} $
+$$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x^{1+0} + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{1+1} $$
 
-$ = \langle \mathbf{l_0}, \mathbf{r_0} \rangle + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^2 $
+$$ = \langle \mathbf{l_0}, \mathbf{r_0} \rangle + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^2 $$
 
-$ = \langle [2, 3], [3, 5] \rangle + \langle [3, 4], [3, 5] \rangle \cdot x + \langle [3, 4], [1, 2] \rangle \cdot x^2 $
+$$ = \langle [2, 3], [3, 5] \rangle + \langle [3, 4], [3, 5] \rangle \cdot x + \langle [3, 4], [1, 2] \rangle \cdot x^2 $$
 
-$ = (6 + 15) + (9 + 20) \cdot x + (3 + 12) \cdot x^2 $
+$$ = (6 + 15) + (9 + 20) \cdot x + (3 + 12) \cdot x^2 $$
 
-$ = 21 + 29 \cdot x + 15 \cdot x^2 $
+$$ = 21 + 29 \cdot x + 15 \cdot x^2 $$
 
 Evaluating at $x=2$,
 
-$ = 21 + 29 \cdot 2 + 15 \cdot 2^2 $
+$$ = 21 + 29 \cdot 2 + 15 \cdot 2^2 $$
 
-$ = 21 + 58 + 60 $
+$$ = 21 + 58 + 60 $$
 
-$ = 139 $
+$$ = 139 $$
 
 ## Inner product argument
 Prover convinces that it knows $\mathbf{a,b}$ satisfying below:
 
-$ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $
-$ c = \langle \mathbf{a,b} \rangle $
+$$ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $$
+$$ c = \langle \mathbf{a,b} \rangle $$
 
 ### Assumption
 - $a, b$ are of the same length and multiples of 2
@@ -87,27 +87,27 @@ $ c = \langle \mathbf{a,b} \rangle $
 - $ c = \langle \mathbf{a,b} \rangle $
 
 #### Prover and verifier know:
-$ \mathbf{g, h} $
+$$ \mathbf{g, h} $$
 
-$ P, c $
+$$ P, c $$
 
 #### Only prover knows:
-$\mathbf{a,b}$
+$$ \mathbf{a,b} $$
 
 ### Proof method
 1. Prover sends $\mathbf{a,b}$ to verifier
 2. Verifier computes:
 
-    $ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $
+    $$ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $$
 
-    $ c = \langle \mathbf{a,b} \rangle $
+    $$ c = \langle \mathbf{a,b} \rangle $$
 
     and checks that if $P, c$ match
 
 ## Improved inner product argument
 Prover convinces verifier that it knows $\mathbf{a,b}$ satisfying below:
 
-$ P = \mathbf{g^{a} h^{b}} \cdot u^{\langle \mathbf{a,b} \rangle} \in \mathbb{G} $
+$$ P = \mathbf{g^{a} h^{b}} \cdot u^{\langle \mathbf{a,b} \rangle} \in \mathbb{G} $$
 
 ### Assumption
 - $a, b$ are of the same length and multiples of 2
@@ -119,18 +119,17 @@ $ P = \mathbf{g^{a} h^{b}} \cdot u^{\langle \mathbf{a,b} \rangle} \in \mathbb{G}
 
 ### Hash function
 
-$H(\mathbf{a}, \mathbf{a'}, \mathbf{b}, \mathbf{b'},c) = \mathbf{g} ^ { \mathbf{a} } _ {[:n']} 
- \cdot \mathbf{g} ^ { \mathbf{a'} } _ {[n':]} \cdot \mathbf{h} ^ { \mathbf{b} } _ {[:n']} \cdot \mathbf{h} ^ { \mathbf{b'} } _ {[n':]} \cdot u^c $
+$$ H(\mathbf{a}, \mathbf{a'}, \mathbf{b}, \mathbf{b'},c) = \mathbf{g} ^ { \mathbf{a} } _ {[:n']} \cdot \mathbf{g} ^ { \mathbf{a'} } _ {[n':]} \cdot \mathbf{h} ^ { \mathbf{b} } _ {[:n']} \cdot \mathbf{h} ^ { \mathbf{b'} } _ {[n':]} \cdot u^c $$
 
 Operation " $\cdot$ " is addively homomorphic, and therefore has below property:
 
-$ H(\mathbf{a}_1, \mathbf{a'}_1, \mathbf{b}_1, \mathbf{b'}_1, c_1) \cdot H(\mathbf{a}_2, \mathbf{a'}_2, \mathbf{b}_2, \mathbf{b'}_2, c_2) = H(\mathbf{a}_1 + \mathbf{a}_2, \mathbf{a'}_1 + \mathbf{a'}_2, \mathbf{b}_1 + \mathbf{b}_2, \mathbf{b'}_1 + \mathbf{b'}_2, c_1 + c_2) $
+$$ H(\mathbf{a}_1, \mathbf{a'}_1, \mathbf{b}_1, \mathbf{b'}_1, c_1) \cdot H(\mathbf{a}_2, \mathbf{a'}_2, \mathbf{b}_2, \mathbf{b'}_2, c_2) = H(\mathbf{a}_1 + \mathbf{a}_2, \mathbf{a'}_1 + \mathbf{a'}_2, \mathbf{b}_1 + \mathbf{b}_2, \mathbf{b'}_1 + \mathbf{b'}_2, c_1 + c_2) $$
 
 ### Proof method
 
-1. $n = length(a)$ 
+1. $$ n = length(a) $$
 
-1. $n' = n / 2$
+1. $$ n' = n / 2 $$
 
 1. Prover computes $ L, R \in\mathbb{G} $ and sends to verifier
 
@@ -318,6 +317,9 @@ $R$ becomes invalid otherwise.
 
 This is called OR proof.
 
+This idea can be applied not only to 1 but also other values as well. For example,
+$ C_{n}' = C_n - nH $ can be used to create a ring signature $ R_n = {C_n, C_{n}'} $ that tests whether $ C_n $ is a commitment to $ n $ or $ 0 $.
+
 #### Constructing Range Proof using OR proofs
 Using OR proofs, a range proof that proves a value to be between 0 and 7 can be constructed as follows:
 
@@ -327,11 +329,11 @@ Using OR proofs, a range proof that proves a value to be between 0 and 7 can be 
     $ C1' = C1 - 1H $
     $ C2' = C2 - 2H $
     $ C3' = C3 - 4H $
-1. Create below 3 range proofs
+1. Create below 3 ring signatures
     $ \lbrace C1, C1' \rbrace $
     $ \lbrace C2, C2' \rbrace $
     $ \lbrace C3, C3' \rbrace $
-1. If all ranges proofs are valid, the value is inside the range. If not, the value is outside the range.
+1. If all ring signatures are valid, the value is inside the range. If not, the value is outside the range.
 
 ## Inner-Product Range Proof
 Range proof explained in Bulletproofs paper.
