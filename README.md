@@ -16,68 +16,68 @@ An efficient method of constructing range proof
 ### Vector polynomial
 $n$ is the degree of a polynomial
 
-$$ p(x) = \displaystyle \sum_{i=0}^d \mathbf{p_i} \cdot x^{i} \in \mathbb{Z}_p^n $$
+$ p(x) = \displaystyle \sum_{i=0}^d \mathbf{p_i} \cdot x^{i} \in \mathbb{Z}_p^n $
 
 For example,
 
-$$ n = 2 $$
+$ n = 2 $
 
-$$ d = n-1 = 1 $$
+$ d = n-1 = 1 $
 
-$$ \mathbf{p_0} = [2, 3] \in \mathbb{Z}_p^2 $$
+$ \mathbf{p_0} = [2, 3] \in \mathbb{Z}_p^2 $
 
-$ \mathbf{p_1} = [3, 4] \in \mathbb{Z}_p^2 $$$
+$ \mathbf{p_1} = [3, 4] \in \mathbb{Z}_p^2 $
 
-$$ p(x) = \mathbf{p_0} \cdot x^0 + \mathbf{p_1} \cdot x^1 $$
+$ p(x) = \mathbf{p_0} \cdot x^0 + \mathbf{p_1} \cdot x^1 $
 
-$$ p(x) = [2, 3] + [3, 4] \cdot x $$
+$ p(x) = [2, 3] + [3, 4] \cdot x $
 
 Evaluating at $x=5$,
 
-$$ p(5) = [2, 3] + [3, 4] \cdot 5 $$
+$ p(5) = [2, 3] + [3, 4] \cdot 5 $
 
-$$ p(5) = [2, 3] + [15, 20] $$
+$ p(5) = [2, 3] + [15, 20] $
 
-$$ p(5) = [17, 23] \in \mathbb{Z}_p^2 $$
+$ p(5) = [17, 23] \in \mathbb{Z}_p^2 $
 
 ### Inner product of vector polynomial
 Assuming $l(x), r(x)$ to be vector polynomials,
 
-$$ \langle l(x), r(x) \rangle = \displaystyle \sum_{i=0}^d \displaystyle \sum_{j=0}^i \langle \mathbf{l_i}, \mathbf{r_i} \rangle \cdot x^{i+j} \in \mathbb{Z}_p^n $$
+$ \langle l(x), r(x) \rangle = \displaystyle \sum_{i=0}^d \displaystyle \sum_{j=0}^i \langle \mathbf{l_i}, \mathbf{r_i} \rangle \cdot x^{i+j} \in \mathbb{Z}_p^n $
 
 For example,
 
-$$ n = 2 $$
+$ n = 2 $
 
-$$ d = n-1 = 1 $$
+$ d = n-1 = 1 $
 
-$$ l(x) = [2, 3] + [3, 4] \cdot x $$
+$ l(x) = [2, 3] + [3, 4] \cdot x $
 
-$$ r(x) = [3, 5] + [1, 2] \cdot x $$
+$ r(x) = [3, 5] + [1, 2] \cdot x $
 
-$$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x^{1+0} + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{1+1} $$
+$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x^{1+0} + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{1+1} $
 
-$$ = \langle \mathbf{l_0}, \mathbf{r_0} \rangle + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^2 $$
+$ = \langle \mathbf{l_0}, \mathbf{r_0} \rangle + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^2 $
 
-$$ = \langle [2, 3], [3, 5] \rangle + \langle [3, 4], [3, 5] \rangle \cdot x + \langle [3, 4], [1, 2] \rangle \cdot x^2 $$
+$ = \langle [2, 3], [3, 5] \rangle + \langle [3, 4], [3, 5] \rangle \cdot x + \langle [3, 4], [1, 2] \rangle \cdot x^2 $
 
-$$ = (6 + 15) + (9 + 20) \cdot x + (3 + 12) \cdot x^2 $$
+$ = (6 + 15) + (9 + 20) \cdot x + (3 + 12) \cdot x^2 $
 
-$$ = 21 + 29 \cdot x + 15 \cdot x^2 $$
+$ = 21 + 29 \cdot x + 15 \cdot x^2 $$
 
 Evaluating at $x=2$,
 
-$$ = 21 + 29 \cdot 2 + 15 \cdot 2^2 $$
+$ = 21 + 29 \cdot 2 + 15 \cdot 2^2 $
 
-$$ = 21 + 58 + 60 $$
+$ = 21 + 58 + 60 $
 
-$$ = 139 $$
+$ = 139 $
 
 ## Inner product argument
 Prover convinces that it knows $\mathbf{a,b}$ satisfying below:
 
-$$ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $$
-$$ c = \langle \mathbf{a,b} \rangle $$
+$ P = \mathbf{g^{a} h^{b}} \in \mathbb{Z_p} $
+$ c = \langle \mathbf{a,b} \rangle $
 
 ### Assumption
 - $a, b$ are of the same length and multiples of 2
@@ -433,7 +433,8 @@ Note that $ (z - z^2) \cdot \langle \mathbf{1}^n, \mathbf{y}^n \rangle - z^3 \la
 
     $ t_0 = z^2 \cdot \upsilon + \delta (y, z) $
 
-    $ t_1 = \langle \mathbf{l_1}, \mathbf{r_0} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 \cdot \mathbf{2}^n \rangle $
+    $ t_1 = \langle \mathbf{l_1}, \mathbf{r_0} \rangle + \langle \mathbf
+     {l_0}, \mathbf{r_1} \rangle $
 
     $ t_2 = \langle \mathbf{l_1}, \mathbf{r_1} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ \mathbf{s}_R \rangle $
 
@@ -516,10 +517,13 @@ By doing so, prover can reduce number of elements to send to verifier from $2n$ 
 
 ### Calculation details of \<l(x), r(x)\>
 
-Groupinng terms of $ l(x), r(x) $ by term degree to $ \mathbf{l_n}, \mathbf{r_n} $,
+The definition of inner product of verctor polynomials is:
 
-$ l(x) = (\mathbf{a}_L - z \cdot \mathbf{1}^n) + \mathbf{s}_L \cdot x 
- $
+$ \langle l(x), r(x) \rangle = \displaystyle \sum_{i=0}^d \displaystyle \sum_{j=0}^i \langle \mathbf{l_i}, \mathbf{r_i} \rangle \cdot x^{i+j} \in \mathbb{Z}_p^n $
+
+Groupinng terms of $ l(x), r(x) $ by term degree to $ \mathbf{l_n}, \mathbf{r_n}$,
+
+$ l(x) = (\mathbf{a}_L - z \cdot \mathbf{1}^n) + \mathbf{s}_L \cdot x $
 
 $ \mathbf{l_0} = \mathbf{a}_L - z \cdot \mathbf{1}^n $
 
@@ -531,25 +535,26 @@ $ \mathbf{r_0} = \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 
 
 $ \mathbf{r_1} = \mathbf{y}^n \circ \mathbf{s}_R $
 
-Because definition of inner product of vector polynomial is:
+We can see that $d=1$ and expanding the inner product definition:
 
-$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x^{1+0} + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{1+1} $
+$ \langle l(x), r(x) \rangle = \langle \mathbf{l_0}, \mathbf{r_0} \rangle + \langle \mathbf{l_1}, \mathbf{r_0} \rangle \cdot x + \langle \mathbf{l_1}, \mathbf{r_1} \rangle \cdot x^{2} $
 
 Looking at the definition of $t(x)$:
 
-$ t(x) = \langle l(x), r(x) \rangle = t_0 + t1 \cdot x + t2 \cdot x^2 \in \mathbb{Z}_p $
+$ t(x) = \langle l(x), r(x) \rangle = t_0 + t_1 \cdot x + t_2 \cdot x^2 \in \mathbb{Z}_p $
 
 We can see:
 
-$t_0 = \langle \mathbf{l_0}, \mathbf{r_0} \rangle \cdot x^{0+0} = \langle \mathbf{a}_L - z \cdot \mathbf{1}^n , \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 \cdot \mathbf{2}^n  \rangle $
+$t_0 = \langle \mathbf{l_0}, \mathbf{r_0} \rangle = \langle \mathbf{a}_L - z \cdot \mathbf{1}^n , \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 \cdot \mathbf{2}^n  \rangle $
 
 which matches with LHS of (39), and it can be deduced that $t_0$ equals to RHS of (49) which is $ z^2 \cdot \upsilon + \delta (y, z) $.
 
-By the same reasoning $t_1, t_2$ are:
+With the same reasoning $t_1, t_2$ are:
 
-$ t_1 = \langle \mathbf{l_1}, \mathbf{r_0} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 \cdot \mathbf{2}^n \rangle $
+$ t_1 = \langle \mathbf{l_1}, \mathbf{r_0} \rangle + \langle \mathbf{l_0}, \mathbf{r_1} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ (\mathbf{a}_R + z \cdot \mathbf{1}^n) + z^2 \cdot \mathbf{2}^n \rangle + \langle \mathbf{a}_L - z \cdot \mathbf{1}^n, \mathbf{y}^n \circ \mathbf{s}_R \rangle = (\mathbf{s}_L \cdot \mathbf{y}^n \cdot \mathbf{a}_R + \mathbf{s}_L \cdot \mathbf{y}^n \cdot z \cdot \mathbf{1}^n + z^2 \cdot \mathbf{2}^n) + (\mathbf{a}_L \cdot \mathbf{y}^n \cdot \mathbf{s}_R - z \cdot \mathbf{1}^n \cdot \mathbf{y}^n \cdot \mathbf{s}_R) $
 
-$ t_2 = \langle \mathbf{l_1}, \mathbf{r_1} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ \mathbf{s}_R \rangle $
+$ t_2 = \langle \mathbf{l_1}, \mathbf{r_1} \rangle = \langle \mathbf{s}_L, \mathbf{y}^n \circ \mathbf{s}_R \rangle = \mathbf{s}_L \cdot \mathbf{y}^n \cdot \mathbf{s}_R$
+
 
 ### Supplementary explanation for (65)
 $ g^{\hat{t}} h^{\tau_x} \ ?= V^{z^2} \cdot g^{\delta (y, z)} \cdot T_1^x \cdot T_2^{x^2} $ (65)
